@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MM3DGS.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MM3DGS</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+<!-- 
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+ -->
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using
+            Vision, Depth, and Inertial Measurements</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Lisong C. Sun</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://neel1302.github.io/">Neel Bhatt</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/jonliu88">Jonathan C. Liu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a><sup>1</sup>,
+            </span>
+            <br>
+            <span class="author-block">
+              <a href="https://express.adobe.com/page/CAdrFMJ9QeI2y/">Zhangyang Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Todd E. Humphreys</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Ufuk Topcu</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>The University of Texas at Austin,</span>
+            <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
+          </div>
+
+          <!-- <div class="column has-text-centered">
+            <div class="publication-links">
+              PDF Link.
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              Video Link.
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              Code Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              Dataset Link.
+              <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div> -->
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+        <div class="columns is-centered">
+      
+        <div class="column has-text-centered">
+          <div class="content">
+            <video id="s1_recon" controls muted loop playsinline style="width: 100%; height: 300px;">
+              <source src="./static/videos/ego_centric.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      
+        <div class="column has-text-centered">
+          <div class="content">
+            <video id="s1_nvs" controls muted loop playsinline style="width: 100%; height: 300px">
+              <source src="./static/videos/square_line.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+
+        </div>
+        </div>
+      <h2 class="subtitle has-text-centered">
+        <span>Our model accurately tracks and maps 3D scenes from our UT-MM SLAM Dataset. The left video is from the ego-centric scene post gaussian generation
+          and the right video is from the square scene during concurrent gaussian generation.
+        </span>
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="hero is-small is-light">
+  <div class="hero-body">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Simultaneous localization and mapping is essential for position tracking and scene understanding. 
+            3D Gaussian-based map representations enable photorealistic reconstruction and real-time rendering
+            of scenes using multiple posed cameras. We show for the first time that using 3D Gaussians for map
+            representation with unposed camera images and inertial measurements can enable accurate SLAM. 
+            Our method, MM3DGS, addresses the limitations of prior neural radiance field-based representations by 
+            enabling faster rendering, scale awareness, and improved trajectory tracking. Our framework enables 
+            keyframe-based mapping and tracking utilizing loss functions that incorporate relative pose transformations
+            from pre-integrated inertial measurements, depth estimates, and measures of photometric rendering quality.
+            We also release a multi-modal dataset, UT-MM, collected from a mobile robot equipped with a camera 
+            and an inertial measurement unit. Experimental evaluation on several scenes from the dataset shows
+            that MM3DGS achieves 3x improvement in tracking and 5% improvement in photometric rendering quality
+            compared to the current 3DGS SLAM state-of-the-art, while allowing real-time rendering of a high-resolution dense 3D map.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Full Video</h2>
+        <div class="item item-mainVideo">
+          <video poster="" id="main" controls muted loop playsinline height="100%">
+            <source src="./static/videos/IROS24_MM3DGS_SLAM_Video.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Framework Overview</h2>
+        <div class="content has-text-justified">
+          <img src="./static/images/framework.jpg">
+
+          <p>Overview of the MM3DGS framework. We receive camera images and inertial 
+            measurements from a mobile robot. We utilize depth measurements and IMU 
+            pre-integration for pose optimization using a combined tracking loss. 
+            We apply a keyframe selection approach based on image covisibility and the NIQE metric 
+            across a sliding window and initialize new 3D Gaussians for keyframes with low opacity 
+            and high depth error [Mittal 2013]. Finally, we optimize parameters of the 
+            3D Gaussians according the mapping loss for the selected keyframes.</p>
+
+
+            
+
+
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container ">
+    <div class=" has-text-centered">
+      <h2 class="title is-3">Visual Comparisons to Ground Truth</h2>
+      <div class="content has-text-justified">
+        <p>
+
+        </p>
+      </div>
+      <div class="columns is-centered">
+        <!-- Visual Effects. -->
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div id="example1" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/render_eCentric.png">
+                    <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width:96.4968152866242%;">
+                    <div class="bal-before-inset" style="width: 539px;">
+                      <img src="./static/images/render_gt_eCentric.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ground Truth
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left:96.4968152866242%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="content">
+            <div class="columns is-centered">
+              <div class="column is-full-width">
+                <div id="example2" class="bal-container-small">
+
+                  <div class="bal-after">
+                    <img src="./static/images/render_eDrive.png">
+                    <div class="bal-afterPosition afterLabel">
+                      Ours
+                    </div>
+                  </div>
+
+                  <div class="bal-before" style="width: 50%;">
+                    <div class="bal-before-inset" style="width: 539px;">
+                      <img src="./static/images/render_gt_eDrive.png">
+                      <div class="bal-beforePosition beforeLabel">
+                        Ground Truth
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="bal-handle" style="left: 50%;">
+                    <span class=" handle-left-arrow"></span>
+                    <span class="handle-right-arrow"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- <div class="column">
+          <div class="columns is-centered">
+            <div class="column content">
+
+              <div id="example4" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/render_eDrive.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:62.10191082802548%;">
+                  <div class="bal-before-inset" style="width: 539px;">
+                    <img src="./static/images/render_gt_eDrive.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ground Truth
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:62.10191082802548%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div>
+
+              <div id="example5" class="bal-container-small">
+                <div class="bal-after">
+                  <img src="./static/images/render_eDrive.png">
+                  <div class="bal-afterPosition afterLabel" style="z-index:1;">
+                    Ours
+                  </div>
+                </div>
+
+                <div class="bal-before" style="width:56.77179962894249%;">
+                  <div class="bal-before-inset" style="width: 628px;">
+                    <img src="./static/images/render_gt_eDrive.png">
+                    <div class="bal-beforePosition beforeLabel">
+                      Ground Truth
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bal-handle" style="left:56.77179962894249%;">
+                  <span class=" handle-left-arrow"></span>
+                  <span class="handle-right-arrow"></span>
+                </div>
+
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+<div class="container is-max-desktop">
+<div class="column has-text-centered">
+  <div class="content">
+    <h2 class="title is-3">Scenes from our UT-MM Dataset</h2>
+    <video id="s2_recon" controls muted loop playsinline width="100%" style="margin-bottom: 50px;">
+      <source src="./static/videos/ego_drive_dataset.mp4"
+              type="video/mp4">
+    </video>
+    <video id="s2_recon" controls muted loop playsinline width="100%">
+      <source src="./static/videos/square.mp4"
+              type="video/mp4">
+    </video>
+    <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
+  </div>
+  <p>
+    Top: Ego-drive scene. Bottom: Square scene. Our other scenes include 2 Ego-centric scenes, which involves the robot circling an object and 3 Straight scenes,
+    where the robot drives forward in a straight line.
+  </p>
+</div>
+</div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">References</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            [Mittal 2013] A. Mittal, R. Soundararajan, and A. C. Bovik, “Making a “com-pletely blind” image quality analyzer,” IEEE Signal Processing Letters, vol. 20, no. 3, pp. 209–212, 2013
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{
+  author    = 
+  title     = 
+  journal   = 
+  year      = 
+}</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            We express our thanks towards the authors of <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> for the template of this website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/script.js"></script>
+
+<script>
+    new BeforeAfter({
+        id: '#example1'
+    });
+    new BeforeAfter({
+        id: '#example2'
+    });
+    new BeforeAfter({
+        id: '#example4'
+    });
+    new BeforeAfter({
+        id: '#example5'
+    });
+
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
