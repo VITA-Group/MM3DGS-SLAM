@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description"
         content="MM3DGS.">
-  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="keywords" content="3DGS, SLAM, Gaussians">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MM3DGS</title>
 
@@ -32,7 +32,6 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -41,48 +40,6 @@
   <script src="./static/js/index.js"></script>
 </head>
 <body>
-<!-- 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
-          </a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</nav>
- -->
-
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -118,11 +75,11 @@
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
-          <!-- <div class="column has-text-centered">
+          <div class="column has-text-centered">
             <div class="publication-links">
-              PDF Link.
+              <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -131,7 +88,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -139,9 +96,9 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              Video Link.
+              <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -149,9 +106,9 @@
                   <span>Video</span>
                 </a>
               </span>
-              Code Link.
+              <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -159,132 +116,45 @@
                   <span>Code</span>
                   </a>
               </span>
-              Dataset Link.
-              <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                  </a>
+                  </a> -->
             </div>
 
-          </div> -->
+          </div>
         
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-        <div class="columns is-centered">
-      
-        <div class="column has-text-centered">
-          <div class="content">
-            <video id="s1_recon" controls muted loop playsinline style="width: 100%; height: 300px;">
-              <source src="./static/videos/ego_centric.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-      
-        <div class="column has-text-centered">
-          <div class="content">
-            <video id="s1_nvs" controls muted loop playsinline style="width: 100%; height: 300px">
-              <source src="./static/videos/square_line.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-        </div>
-
-        </div>
-        </div>
-      <h2 class="subtitle has-text-centered">
-        <span>Our model accurately tracks and maps 3D scenes from our UT-MM SLAM Dataset. The left video is from the ego-centric scene post gaussian generation
-          and the right video is from the square scene during concurrent gaussian generation.
-        </span>
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+<section class="section">
+  <div class="container is-max-desktop" style="max-width: 100em;">
+  <div class="column has-text-centered">
+    <div class="content" style="display: flex; justify-content: center;">
+      <video id="s2_recon" autoplay controls muted loop playsinline width="49%" style="margin-right: 10px;">
+        <source src="./static/videos/ego_centric.mp4"
                 type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
+      <video id="s2_recon" autoplay controls muted loop playsinline width="49%">
+        <source src="./static/videos/square_line.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
     </div>
+    <p style="max-width: 50em; text-align: center; margin: 0 auto;""> 
+      Our model accurately tracks and maps 3D scenes from our UT-MM SLAM Dataset. The left video is from the ego-centric scene post gaussian generation
+      and the right video is from the square scene during concurrent gaussian generation.
+    </p>
   </div>
-</section> -->
-
-
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
   </div>
-</section> -->
-
+  </section>
 
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -361,7 +231,7 @@
 <section class="section">
   <div class="container ">
     <div class=" has-text-centered">
-      <h2 class="title is-3">Visual Comparisons to Ground Truth</h2>
+      <h2 class="title is-3">Visual Comparisons with Ground Truth and SplaTAM</h2>
       <div class="content has-text-justified">
         <p>
 
@@ -397,19 +267,12 @@
                   </div>
 
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="column">
-          <div class="content">
-            <div class="columns is-centered">
-              <div class="column is-full-width">
+
                 <div id="example2" class="bal-container-small">
 
                   <div class="bal-after">
-                    <img src="./static/images/render_eDrive.png">
+                    <img src="./static/images/render_eCentric.png">
                     <div class="bal-afterPosition afterLabel">
                       Ours
                     </div>
@@ -417,9 +280,9 @@
 
                   <div class="bal-before" style="width: 50%;">
                     <div class="bal-before-inset" style="width: 539px;">
-                      <img src="./static/images/render_gt_eDrive.png">
+                      <img src="./static/images/render_splatam_eCentric.png">
                       <div class="bal-beforePosition beforeLabel">
-                        Ground Truth
+                        SplaTAM
                       </div>
                     </div>
                   </div>
@@ -433,7 +296,13 @@
               </div>
             </div>
           </div>
-        <!-- <div class="column">
+        </div>
+
+
+        <!--/ Visual Effects. -->
+
+        <!-- Matting. -->
+        <div class="column">
           <div class="columns is-centered">
             <div class="column content">
 
@@ -471,9 +340,9 @@
 
                 <div class="bal-before" style="width:56.77179962894249%;">
                   <div class="bal-before-inset" style="width: 628px;">
-                    <img src="./static/images/render_gt_eDrive.png">
+                    <img src="./static/images/render_splatam_eDrive.png">
                     <div class="bal-beforePosition beforeLabel">
-                      Ground Truth
+                      SplaTAM
                     </div>
                   </div>
                 </div>
@@ -483,7 +352,7 @@
                   <span class="handle-right-arrow"></span>
                 </div>
 
-              </div> -->
+              </div>
             </div>
           </div>
         </div>
@@ -491,6 +360,7 @@
     </div>
   </div>
 </section>
+
 
 <section class="section">
 <div class="container is-max-desktop">
@@ -534,17 +404,20 @@
 </section>
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{
-  author    = 
-  title     = 
-  journal   = 
-  year      = 
+    <pre><code>@misc{sun2024multimodal3dgsslam,
+  author    = {Lisong C. Sun, Neel Bhatt, Jonathan C. Liu, Zhiwen Fan, Zhangyang Wang, Todd E. Humphreys, Ufuk Topcu},
+  title     = {MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using Vision, Depth, and Inertial Measurements},
+  year      = {2024}, 
+  eprint    = {}, 
+  archivePrefix = {arXiv}, 
+  primaryClass = {cs.CV},
 }</code></pre>
   </div>
-</section> -->
+</section>
+
 
 
 <footer class="footer">
