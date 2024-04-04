@@ -335,3 +335,23 @@ body {
 .title.is-3{
   color: #048c3d;
 }
+
+.content-box {
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #e1f5fe; /* Light blue tint */
+}
+
+.content-box a {
+  color: teal; /* Blue color for links */
+  text-decoration: none;
+  font-size: 24px; /* Adjust font size as needed */
+  font-family: 'Arial', sans-serif; /* Use a preferred font family */
+  font-weight: bold; /* Bold font weight */
+}
+
+.content-box a:hover {
+  text-decoration: underline;
+}
