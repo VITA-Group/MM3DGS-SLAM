@@ -370,23 +370,101 @@
 <div class="column has-text-centered">
   <div class="content">
     <h2 class="title is-3">Scenes from our UT-MM Dataset</h2>
-    <video id="s2_recon" controls muted loop playsinline width="100%" style="margin-bottom: 50px;">
+    <div class="row">
+      <div class="video">
+        <video id="v1" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/1.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="video">
+        <video id="v2" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/2.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="row">
+      <div class="video">
+        <video id="v3" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/3.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="video">
+        <video id="v4" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/4.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="video">
+        <video id="v5" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/5.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+    <div class="row">
+      <div class="video">
+        <video id="v6" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/6.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="video">
+        <video id="v7" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/7.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="video">
+        <video id="v8" controls muted loop playsinline width="100%" style="margin-bottom: 2px;">
+          <source src="./static/videos/datasets/8.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+
+
+    <!-- <video id="s2_recon" controls muted loop playsinline width="100%" style="margin-bottom: 50px;">
       <source src="./static/videos/ego_drive_dataset.mp4"
               type="video/mp4">
     </video>
     <video id="s2_recon" controls muted loop playsinline width="100%">
       <source src="./static/videos/square.mp4"
               type="video/mp4">
-    </video>
+    </video> -->
     <!-- <img src = "data/viz_gifs/row3_col3.gif"> -->
   </div>
-  <p>
-    Top: Ego-drive scene. Bottom: Square scene. Our other scenes include 2 Ego-centric scenes, which involves the robot circling an object and 3 Straight scenes,
-    where the robot drives forward in a straight line.
-  </p>
 </div>
 </div>
 </section>
+
+<style>
+  .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 2000px;
+}
+.video {
+  width: 1000px;
+  height: auto; 
+  margin: 5px;
+}
+
+</style>
+
+<script>
+  document.getElementById('v1').playbackRate = 45/15;
+  document.getElementById('v2').playbackRate = 53/15;
+  document.getElementById('v3').playbackRate = 50/15;
+  document.getElementById('v4').playbackRate = 42/15;
+  document.getElementById('v5').playbackRate = 39/15;
+  document.getElementById('v6').playbackRate = 15/15;
+  document.getElementById('v7').playbackRate = 18/15;
+  document.getElementById('v8').playbackRate = 15/15;
+</script>
 
 
 <!-- <section class="section">
