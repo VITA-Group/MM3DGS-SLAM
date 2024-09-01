@@ -11,6 +11,10 @@ Vision, Depth, and Inertial Measurements".
 
 As shown above, we present the framework for Multi-modal 3D Gaussian Splatting for SLAM. We utilize inertial measurements, RGB images, and depth measurements to create a SLAM method using 3D Gaussians. Through the effort of integrating multiple modalities, our SLAM method performs with high tracking and mapping accuracy.
 
+## Dataset
+
+To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel1302/UT-MM/tree/main).
+
 
 ## Citation
 
