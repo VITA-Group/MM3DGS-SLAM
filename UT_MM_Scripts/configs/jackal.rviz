@@ -1,0 +1,406 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /TF1/Frames1
+        - /vicon_odometry1/Shape1
+      Splitter Ratio: 0.5
+    Tree Height: 438
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.5886790156364441
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Name: Time
+    SyncMode: 0
+    SyncSource: Color
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /realsense/color/image_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Color
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /realsense/depth/image_rect_raw
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Depth
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: ring
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: Lidar
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 1.5
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /ouster/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: false
+      Length: 1
+      Name: World
+      Radius: 0.10000000149011612
+      Reference Frame: <Fixed Frame>
+      Show Trail: false
+      Value: false
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        Jackal_Latest:
+          Value: false
+        base_link:
+          Value: false
+        chassis_link:
+          Value: false
+        front_fender_link:
+          Value: false
+        front_left_wheel_link:
+          Value: false
+        front_mount:
+          Value: false
+        front_right_wheel_link:
+          Value: false
+        gx5_link:
+          Value: false
+        imu_link:
+          Value: false
+        microstrain_link:
+          Value: false
+        mid_mount:
+          Value: false
+        navsat_link:
+          Value: false
+        odom:
+          Value: false
+        os_imu:
+          Value: false
+        os_lidar:
+          Value: false
+        os_sensor:
+          Value: false
+        os_sensor_base_link:
+          Value: false
+        os_sensor_baseplate:
+          Value: false
+        ouster_link:
+          Value: false
+        ouster_mount_model:
+          Value: false
+        realsense_bottom_screw_frame:
+          Value: false
+        realsense_camera_link:
+          Value: false
+        realsense_color_frame:
+          Value: false
+        realsense_color_optical_frame:
+          Value: false
+        realsense_depth_frame:
+          Value: false
+        realsense_depth_optical_frame:
+          Value: false
+        realsense_link:
+          Value: false
+        realsense_mount:
+          Value: false
+        rear_fender_link:
+          Value: false
+        rear_left_wheel_link:
+          Value: false
+        rear_mount:
+          Value: false
+        rear_right_wheel_link:
+          Value: false
+        robot:
+          Value: true
+        sensor:
+          Value: false
+        sensor_wgs84:
+          Value: false
+        white_top_plate:
+          Value: false
+        world:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 4
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_link:
+            chassis_link:
+              front_fender_link:
+                {}
+              front_left_wheel_link:
+                {}
+              front_right_wheel_link:
+                {}
+              imu_link:
+                {}
+              mid_mount:
+                front_mount:
+                  {}
+                rear_mount:
+                  {}
+              navsat_link:
+                {}
+              rear_fender_link:
+                {}
+              rear_left_wheel_link:
+                {}
+              rear_right_wheel_link:
+                {}
+            gx5_link:
+              {}
+            ouster_mount_model:
+              ouster_link:
+                os_sensor_base_link:
+                  os_sensor_baseplate:
+                    {}
+            realsense_mount:
+              realsense_camera_link:
+                realsense_bottom_screw_frame:
+                  realsense_link:
+                    realsense_color_frame:
+                      realsense_color_optical_frame:
+                        {}
+                    realsense_depth_frame:
+                      realsense_depth_optical_frame:
+                        {}
+            white_top_plate:
+              {}
+        sensor_wgs84:
+          sensor:
+            {}
+        world:
+          Jackal_Latest:
+            {}
+          microstrain_link:
+            {}
+          os_sensor:
+            os_imu:
+              {}
+            os_lidar:
+              {}
+          robot:
+            {}
+      Update Interval: 0
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Keep: 1000
+      Name: vicon_odometry
+      Position Tolerance: 0.10000000149011612
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 138; 226; 52
+        Head Length: 0.10000000149011612
+        Head Radius: 0.05999999865889549
+        Shaft Length: 0.05000000074505806
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /vrpn_client_node/Jackal_Latest/odom
+      Unreliable: false
+      Value: true
+    - Angle Tolerance: 0.10000000149011612
+      Class: rviz/Odometry
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: false
+      Keep: 100
+      Name: Odometry
+      Position Tolerance: 0.10000000149011612
+      Queue Size: 10
+      Shape:
+        Alpha: 1
+        Axes Length: 1
+        Axes Radius: 0.10000000149011612
+        Color: 255; 25; 0
+        Head Length: 0.30000001192092896
+        Head Radius: 0.10000000149011612
+        Shaft Length: 0.05000000074505806
+        Shaft Radius: 0.05000000074505806
+        Value: Arrow
+      Topic: /preintegration/odom/initial_frame
+      Unreliable: false
+      Value: false
+    - Alpha: 1
+      Class: rviz/Axes
+      Enabled: false
+      Length: 1
+      Name: IMU
+      Radius: 0.10000000149011612
+      Reference Frame: imu_link_
+      Show Trail: false
+      Value: false
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Angle: 0
+      Class: rviz/TopDownOrtho
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Scale: 57.153812408447266
+      Target Frame: <Fixed Frame>
+      X: -8.993212699890137
+      Y: 0.05581456422805786
+    Saved: ~
+Window Geometry:
+  Color:
+    collapsed: false
+  Depth:
+    collapsed: false
+  Displays:
+    collapsed: true
+  Height: 1043
+  Hide Left Dock: true
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000015600000241fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003d00000241000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000226fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003d00000226000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073800000172fc0100000003fc00000000000003850000005900fffffffa000000000200000002fb0000000a0043006f006c006f00720100000000ffffffff0000001600fffffffb0000000800540069006d0065000000039d0000003e0000003900fffffffb0000000a00440065007000740068010000038b000003ad0000005f00fffffffb0000000800540069006d00650100000000000004500000000000000000000007380000024100000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1848
+  X: 1992
+  Y: 0

@@ -25,6 +25,20 @@ Combined, the datasets contain 8387 images, 2796 LiDAR scans, and 27971 IMU meas
 /ouster/points                         : sensor_msgs/PointCloud2 (LiDAR Point Clouds, 10hz)
 ```
 
+To visualize the dataset, ROS is needed. Some scripts are provided in the UT_MM_Scripts directory.
+
+```
+roscore
+
+rosrun rviz rviz -d UT_MM_Scripts/configs/jackal.rviz
+
+rqt --clear-config --perspective-file UT_MM_Scripts/configs/rqt_plots.perspective
+
+rosbag play --clock *.bag --pause
+
+python3 imu_preintegration.py
+```
+
 
 ## Citation
 
