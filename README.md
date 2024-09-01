@@ -15,7 +15,7 @@ As shown above, we present the framework for Multi-modal 3D Gaussian Splatting f
 
 To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel1302/UT-MM/tree/main). To see videos of the content, please visit our [[Project Page]](https://vita-group.github.io/MM3DGS-SLAM/).
 
-The following is a quick overview of the topics that can be found within each bag file:
+Combined, the datasets contain 8387 images, 2796 LiDAR scans, and 27971 IMU measurements. The following is a quick overview of the topics that can be found within each bag file:
 
 ```
 /vrpn_client_node/Jackal_Latest/pose   : geometry_msgs/PoseStamped (Pose Coordinates, 100hz)
