@@ -15,6 +15,16 @@ As shown above, we present the framework for Multi-modal 3D Gaussian Splatting f
 
 To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel1302/UT-MM/tree/main).
 
+The following is a quick overview of the topics that can be found within each bag file:
+
+```
+/vrpn_client_node/Jackal_Latest/pose   : geometry_msgs/PoseStamped (Pose Coordinates, 100hz)
+/realsense/color/image_raw/compressed  : sensor_msgs/CompressedImage (RGB Image, 30hz)
+/realsense/depth/image_rect_raw        : sensor_msgs/Image (Depth Image, 30hz)
+/microstrain/imu/data                  : sensor_msgs/Imu (Imu Measurements, 100hz)
+/ouster/points                         : sensor_msgs/PointCloud2 (LiDAR Point Clouds, 10hz)
+```
+
 
 ## Citation
 
