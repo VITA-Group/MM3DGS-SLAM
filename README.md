@@ -13,7 +13,7 @@ As shown above, we present the framework for Multi-modal 3D Gaussian Splatting f
 
 ## Dataset
 
-To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel1302/UT-MM/tree/main).
+To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel1302/UT-MM/tree/main). To see videos of the content, please visit our [[Project Page]](https://vita-group.github.io/MM3DGS-SLAM/).
 
 The following is a quick overview of the topics that can be found within each bag file:
 
