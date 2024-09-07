@@ -1,2 +1,10 @@
+*.pyc
 .DS_store
 .idea
+.vscode
+output
+build
+diff_rasterization/diff_rast.egg-info
+diff_rasterization/dist
+tensorboard_3d
+screenshots

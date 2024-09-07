@@ -1,0 +1,28 @@
+name: mm3dgs
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - cudatoolkit=11.6
+  - plyfile=0.8.1
+  - python=3.10
+  - pip=22.3.1
+  - pytorch=1.12.1
+  - torchaudio=0.12.1
+  - torchvision=0.13.1
+  - torchmetrics
+  - imageio
+  - tqdm
+  - pyyaml
+  - matplotlib
+  - opencv
+  - kornia
+  - natsort
+  - pip:
+      - submodules/diff-gaussian-rasterization
+      - open3d==0.16.0
+      - mathutils==3.3.0
+      - pyiqa
+      - bagpy
+      - cv_bridge
