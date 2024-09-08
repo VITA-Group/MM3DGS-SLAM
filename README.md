@@ -42,6 +42,13 @@ example,
 python slam_top.py --config ./configs/UTMM.yml
 ```
 
+Note that the directory to the dataset must first be added to the config
+file before running, e.g.,
+
+```yaml
+inputdir: /datasets/UTMM/ # TODO: input dataset location
+```
+
 Outputs, including any enabled debug, will be put in the `./output` directory.
 
 ## Evaluation
