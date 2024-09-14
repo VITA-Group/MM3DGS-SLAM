@@ -5,6 +5,12 @@ Vision, Depth, and Inertial Measurements".
 
 [[Project Page]](https://vita-group.github.io/MM3DGS-SLAM/) | [[Video]](https://www.youtube.com/watch?v=drf6UxehChE) | [[Paper]](https://arxiv.org/pdf/2404.00923.pdf) | [[Arxiv]](https://arxiv.org/abs/2404.00923)
 
+## Framework
+
+![overview](./docs/static/images/framework.jpg)
+
+As shown above, we present the framework for Multi-modal 3D Gaussian Splatting for SLAM. We utilize inertial measurements, RGB images, and depth measurements to create a SLAM method using 3D Gaussians. Through the effort of integrating multiple modalities, our SLAM method performs with high tracking and mapping accuracy.
+
 ## Cloning the Repository
 
 The repository contains submodules, thus please check it out with
