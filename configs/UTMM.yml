@@ -1,0 +1,87 @@
+dataset: "utmm"
+device: "cuda:0"
+method: "mm3dgs"
+inputdir: # TODO: input dataset location
+scene: "square"
+outputdir: output/utmm/square
+dataloader: "gradslam"
+use_gt_depth: true # If False, a monocular depth estimator is used
+dpt_model: "midas"
+white_background: false
+scene_radius_depth_ratio: 2
+# iteration: 500 # For loading checkpoint
+
+start_idx: 0
+stride: 2
+# early_stop_idx: 500
+
+desired_height: 330
+desired_width: 640
+save_iterations:
+  - 500
+  - 1000
+eval_every: 5 # Stride for image evaluation
+debug:
+  get_runtime_stats: false # Calculate runtime optimization stats
+  create_video: false # Save output video with GT and rendered RGB and depth images
+  save_keyframes: false # Save images of keyframes
+pipeline:
+  convert_SHs_python: false
+  compute_cov3D_python: false
+  transform_means_python: true
+  force_isotropic: true
+tracking:
+  iters: 100
+  use_gt_pose: false
+  dynamics_model: "imu"
+  use_imu_loss: false
+  imu_weight: 1.0
+  use_depth_estimate_loss: true
+  pearson_weight: 0.001
+  position_lr: 0.002
+  rotation_lr: 0.002
+mapping:
+  iters: 150
+  kf_every: 5
+  niqe_kf: true
+  niqe_window_size: 5
+  kf_window_size: 25
+  covisibility_level: 1
+  min_covisibility: 0.95
+  kf_covisibility: 0.1
+  do_BA: false
+  use_depth_estimate_loss: true
+  pearson_weight: 0.001
+  sh_degree: 0
+  cam_t_lr: 0.002
+  cam_q_lr: 0.002
+  position_lr_init: 0.0001
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.001
+  rotation_lr: 0.001
+  rgb_lr: 0.0025
+  spatial_lr_scale: 1
+  percent_dense: 0.01
+  lambda_dssim: 0.2
+  min_opacity: 0.005
+  densification_interval: 50
+  pruning_interval: 50
+  size_threshold: 200
+  opacity_reset_interval: 500
+  densify_from_iter: 0
+  densify_until_iter: 50
+  densify_grad_threshold: 0.0002
+cam:
+  image_height: 660
+  image_width: 1280
+  fx: 642.6510620117188
+  fy: 641.807373046875
+  cx: 654.4762573242188
+  cy: 359.5939025878906
+  crop_edge: 8
+  png_depth_scale: 1000.0
+  fps: 30
