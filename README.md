@@ -144,13 +144,14 @@ To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel
 
 A script to convert the UT-MM rosbag data to usable .txt files is included in
 `scripts/bag2data.py`. Note that [ROS](https://wiki.ros.org/ROS/Installation)
-is required to read the camera-to-imu transformation. However, the transformation is constant between our datasets, provided in 
-```
-./tf/tf.txt
-```
+is required to read the camera-to-imu transformation.
 
 ```shell
 python scripts/bag2data.py --path <rosbag dir path> --scene <scene name>
+```
+However, the transformation is constant between our datasets, which we have provided.
+```
+./tf/tf.txt
 ```
 
 <details>
