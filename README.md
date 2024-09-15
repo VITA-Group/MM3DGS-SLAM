@@ -16,7 +16,6 @@ As shown above, we present the framework for Multi-modal 3D Gaussian Splatting f
 The repository contains submodules, thus please check it out with
 
 ```shell
-# SSH
 git clone git@github.com:VITA-Group/MM3DGS-SLAM.git --recursive
 ```
 
@@ -52,7 +51,7 @@ Note that the directory to the dataset must first be added to the config
 file before running, e.g.,
 
 ```yaml
-inputdir: /datasets/UTMM/ # TODO: input dataset location
+inputdir: /datasets/UTMM/ # Replace with the directory in which you downloaded the dataset
 ```
 
 Outputs, including any enabled debug, will be put in the `./output` directory.
@@ -145,7 +144,10 @@ To access our dataset, visit [Hugging Face](https://huggingface.co/datasets/neel
 
 A script to convert the UT-MM rosbag data to usable .txt files is included in
 `scripts/bag2data.py`. Note that [ROS](https://wiki.ros.org/ROS/Installation)
-is required to read the camera-to-imu transformation.
+is required to read the camera-to-imu transformation. However, the transformation is constant between our datasets, provided in 
+```
+./tf/tf.txt
+```
 
 ```shell
 python scripts/bag2data.py --path <rosbag dir path> --scene <scene name>
