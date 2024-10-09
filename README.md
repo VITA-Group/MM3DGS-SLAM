@@ -218,7 +218,7 @@ python3 imu_preintegration.py
 
 If you find our paper useful or interesting, please consider giving a star ⭐ and citing the following paper 📝.
 
-```
+```bibtex
 @misc{sun2024mm3dgs,
       title={MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using Vision, Depth, and Inertial Measurements},
       author={Lisong C. Sun and Neel P. Bhatt and Jonathan C. Liu and Zhiwen Fan and Zhangyang Wang and Todd E. Humphreys and Ufuk Topcu},
