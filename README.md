@@ -1,9 +1,27 @@
-# MM3DGS-SLAM
-
-The code for our paper for "MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using
+Code repository for "MM3DGS SLAM: Multi-modal 3D Gaussian Splatting for SLAM Using
 Vision, Depth, and Inertial Measurements".
 
-[[Project Page]](https://vita-group.github.io/MM3DGS-SLAM/) | [[Video]](https://www.youtube.com/watch?v=drf6UxehChE) | [[Paper]](https://arxiv.org/pdf/2404.00923.pdf) | [[Arxiv]](https://arxiv.org/abs/2404.00923) | [[Dataset]](https://huggingface.co/datasets/neel1302/UT-MM/tree/main)
+# MM3DGS-SLAM
+
+<p align="center">
+    <a href="https://www.linkedin.com/in/lisong-codey-sun/">Lisong C. Sun*</a>
+    ·
+    <a href="https://neel1302.github.io/">Neel P. Bhatt*</a>
+    ·
+    <a href="https://www.linkedin.com/in/jonathanliu88/">Jonathan C. Liu</a>
+    ·
+    <a href="https://zhiwenfan.github.io/">Zhiwen Fan</a>
+    <br>
+    <a href="https://vita-group.github.io/group.html">Zhangyang Wang</a>
+    ·
+    <a href="https://www.ae.utexas.edu/people/faculty/faculty-directory/humphreys">Todd E. Humphreys</a>
+    ·
+    <a href="https://oden.utexas.edu/people/directory/ufuk--topcu/">Ufuk Topcu</a>
+    <br>
+    <em>* Equal contribution and co-first authors</em>
+  </p>
+
+<h3 align="center"><a href="https://vita-group.github.io/MM3DGS-SLAM/">Project Page</a> | <a href="https://www.youtube.com/watch?v=drf6UxehChE">Video</a> | <a href="https://arxiv.org/pdf/2404.00923.pdf">Paper</a> | <a href="https://huggingface.co/datasets/neel1302/UT-MM/tree/main">Dataset</a> </h3>
 
 ## Framework
 
@@ -198,7 +216,7 @@ python3 imu_preintegration.py
 
 ## Citation
 
-If you find this work interesting and use it in your research, please consider citing our paper.
+If you find our paper useful or interesting, please consider giving a star ⭐ and citing the following paper 📝.
 
 ```
 @misc{sun2024mm3dgs,
